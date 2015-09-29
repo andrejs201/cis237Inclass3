@@ -10,6 +10,21 @@ namespace cis237Inclass3
     {
         static void Main(string[] args)
         {
+            SalaryEmployee salaryEmployee = new SalaryEmployee("David", "Barnes", "IT", 150000);
+
+            Console.WriteLine(salaryEmployee.ToString());
+
+            Console.WriteLine(salaryEmployee.CalculateWeeklyGross());
+
+            Console.WriteLine("**********************************************************");
+
+            HourlyEmployee hourlyEmployee = new HourlyEmployee("Joe", "Somebody", "HR", 8.37m);
+            hourlyEmployee.HoursWorked = 40;
+
+            Console.WriteLine(hourlyEmployee.ToString());
+            Console.WriteLine(hourlyEmployee.CalgulateWeeklyGross());
+            
+
         }
     }
 }

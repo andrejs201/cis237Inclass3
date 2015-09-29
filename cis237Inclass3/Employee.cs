@@ -13,7 +13,7 @@ namespace cis237Inclass3
         private string lastName;
         private string department;
 
-        //Propertiest for variables
+        //Properties for variables
         public string FirstName
         {
             get { return firstName; }
@@ -26,7 +26,7 @@ namespace cis237Inclass3
             set { lastName = value; }
         }
 
-        public string FirstName
+        public string Department
         {
             get { return department; }
             set { department = value; }
@@ -38,6 +38,16 @@ namespace cis237Inclass3
             this.firstName = FirstName;
             this.lastName = LastName;
             this.department = Department;
+        }
+
+        public override string ToString()
+        {
+            return this.firstName + " " + this.lastName;
+        }
+
+        protected virtual void PrintFullName()
+        {
+            Console.WriteLine(this.firstName + " " + this.lastName);
         }
 
 
