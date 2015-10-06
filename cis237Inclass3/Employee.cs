@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace cis237Inclass3
 {
-    class Employee
+    abstract class Employee : IEmployee
     {
         //Private variables
         private string firstName;
@@ -50,6 +50,12 @@ namespace cis237Inclass3
             Console.WriteLine(this.firstName + " " + this.lastName);
         }
 
+        public abstract decimal CalculateWeeklyGross();
+
+        public virtual string GetDepartmentTwice()
+        {
+            return this.Department + this.Department;
+        }
 
     }
 }
