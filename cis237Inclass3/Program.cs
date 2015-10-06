@@ -25,6 +25,25 @@ namespace cis237Inclass3
             Console.WriteLine(hourlyEmployee.CalculateWeeklyGross());
             Console.WriteLine(hourlyEmployee.GetDepartmentTwice());
 
+            Console.WriteLine("**********************************************************");
+
+            //declare and instantiate one of each type of employee
+            HourlyEmployee joe = new HourlyEmployee("Joe", "Somebody", "HR", 9.37m);
+            joe.HoursWorked = 87;
+            SalaryEmployee dave = new SalaryEmployee("Dave", "Barnes", "IT", 150000m);
+
+            Employee spock = new SalaryEmployee("Mr.", "Spock", "ST", 0m);
+
+            //Create an array of type IEmployee, and pass in the two instances we created. IEmployee can contain instances that are lower on the inheritance chain (more specific implementations).
+            IEmployee[] employeeList = { joe, dave, new SalaryEmployee("James", "Kirk", "ST", 0m), spock };
+
+            //Now we can loop through the list of employees and call the CalculateWeeklyGross on each of the employees. The program will be smart enough to know which method to call depending on the current instance it is working with.
+            foreach(IEmployee employee in employeeList)
+            {
+                Console.WriteLine(employee.ToString());
+                Console.WriteLine(employee.CalculateWeeklyGross());
+                Console.WriteLine();
+            }
         }
     }
 }
